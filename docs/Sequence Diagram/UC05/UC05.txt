@@ -1,1 +1,162 @@
 title UC05 จัดการผลการดำเนินงาน
+
+actor Employee Member
+participant View
+participant System
+participant Operational
+
+note over Employee Member, Operational: Show operational
+Employee Member->View: 1. click_manage_operational
+activate Employee Member
+activate View
+View->System: 1.1 request_manageable_operational_list
+activate System
+System->Operational: 1.2 select()
+activate Operational
+System<--Operational: 1.3 return()
+deactivate Operational
+View<--System: 1.4 show_manageable_operational_list
+deactivate System
+Employee Member<--View: 1.5 show_manageable_operational_list
+deactivate View
+deactivate Employee Member
+
+
+alt Click detail
+note over Employee Member, Operational: DETAIL
+Employee Member->View: 2. click_operational_detail
+activate Employee Member
+activate View
+View->System: 2.1 request_operational_detail
+activate System
+System->Operational: 2.2 select()
+activate Operational
+System<--Operational: 2.3 return()
+deactivate Operational
+View<--System: 2.4 show_operational_detail
+deactivate System
+Employee Member<--View: 2.5 show_operational_detail
+Employee Member->View: 2.6 click_return_to_operational_list
+View->System: 2.7 request_operational_list
+activate System
+System->Operational: 2.8 select()
+activate Operational
+System<--Operational: 2.9 return()
+deactivate Operational
+View<--System: 2.10 show_manageable_operational_list
+deactivate System
+Employee Member<--View: 2.11 show_manageable_operational_list
+deactivate View
+deactivate Employee Member
+
+
+else Click add
+note over Employee Member, Operational: ADD
+Employee Member->View: 3. click_add_operational
+activate Employee Member
+activate View
+View->System: 3.1 request_add_operational_form
+activate System
+View<--System: 3.2 show_add_operational_form
+deactivate System
+Employee Member<--View: 3.3 show_add_operational_form
+alt Add data & Click submit
+Employee Member->View:4. add_operational_data
+Employee Member->View:4.1 click_operational_data
+View->System:4.2 submit_operational_data
+activate System
+System->System:4.3 check_submit_operational_data
+alt Valid Operational data
+System->Operational: 4.3.1 insert()
+activate Operational
+System<--Operational: 4.3.2 return()
+deactivate Operational
+View<--System:4.3.3 show_manageable_operational_list
+Employee Member<--View:4.3.4 show_manageable_operational_list
+else Invalid Operational data
+View<--System: 4.3.5 show_submit_error
+deactivate System
+Employee Member<--View: 4.3.6 show_submit_error
+end
+else Click cancel
+Employee Member->View: 5. click_cancel
+View->System:5.1 request_manageable_operational_list
+activate System
+System->Operational: 5.2 select()
+activate Operational
+System<--Operational: 5.3 return()
+deactivate Operational
+View<--System:5.4 show_manageable_operational_list
+deactivate System
+Employee Member<--View:5.5 show_manageable_operational_list
+deactivate View
+deactivate Employee Member
+end
+
+
+else Click delete
+note over Employee Member, Operational: DELETE
+Employee Member->View: 6. click_delete
+activate Employee Member
+activate View
+View->System:6.1 request_operational_delete
+activate System
+System->Operational: 6.2 delete()
+activate Operational
+System<--Operational: 6.3 return()
+deactivate Operational
+View<--System:6.4 show_manageable_operational_list
+deactivate System
+Employee Member<--View:6.5 show_manageable_operational_list
+deactivate View
+deactivate Employee Member
+
+
+else Click edit
+note over Employee Member, Operational: EDIT
+Employee Member->View: 7. click_edit
+activate Employee Member
+activate View
+View->System:7.1 request_editable_operational_form
+activate System
+System->Operational: 7.2 select()
+activate Operational
+System<--Operational: 7.3 return()
+deactivate Operational
+View<--System:7.4 show_editable_operational_form
+deactivate System
+Employee Member<--View:7.5 show_editable_operational_form
+alt Edit data & Click submit
+Employee Member->View:8. edit_operational_data
+Employee Member->View:8.1 click_submit_operational_data
+View->System:8.2 submit_operational_data
+activate System
+System->System:8.3 check_submit_operational_data
+alt Valid Operational data
+System->Operational: 8.3.1 update()
+activate Operational
+System<--Operational: 8.3.2 return()
+deactivate Operational
+View<--System:8.3.3 show_manageable_operational_list
+Employee Member<--View:8.3.4 show_manageable_operational_list
+else Invalid Operational data
+View<--System: 8.3.5 show_submit_error
+deactivate System
+Employee Member<--View: 8.3.6 show_submit_error
+end
+else Click cancel
+Employee Member->View: 9. click_cancel
+View->System:9.1 request_manageable_operational_list
+activate System
+System->Operational: 9.2 select()
+activate Operational
+System<--Operational: 9.3 return()
+deactivate Operational
+View<--System:9.4 show_manageable_operational_list
+deactivate System
+Employee Member<--View:9.5 show_manageable_operational_list
+deactivate View
+deactivate Employee Member
+end
+end
+
