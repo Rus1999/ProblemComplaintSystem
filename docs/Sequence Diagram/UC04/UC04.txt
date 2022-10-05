@@ -43,9 +43,9 @@ System->Complaint: 2.8 select()
 activate Complaint
 System<--Complaint: 2.9 return()
 deactivate Complaint
-View<--System: 2.10 show_complaint_list
+View<--System:2.10 show_manageable_complaint_list
 deactivate System
-Person<--View: 2.11 show_complaint_list
+Person<--View:2.11 show_manageable_complaint_list
 deactivate View
 deactivate Person
 
@@ -58,9 +58,9 @@ activate Person
 activate View
 View->System: 3.1 request_add_complaint_form
 activate System
-View<--System: 3.4 show_add_complaint_form
+View<--System:3.2 show_add_complaint_form
 deactivate System
-Person<--View: 3.5 show_add_complaint_form
+Person<--View:3.3 show_add_complaint_form
 //deactivate View
 // deactivate Person
 
