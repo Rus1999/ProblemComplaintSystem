@@ -23,5 +23,6 @@ create table if not exists Problem (
     Member_ID int(10) not null,
     Employee_ID int(10) not null,
     Admin_ID int(10) not null,
+    operational_ID int(10),
     Problem_status int(1) not null comment '1: complaint, 2: operational'
 );

@@ -1,0 +1,125 @@
+title UC04 จัดการคำร้องเรียนปัญหา
+
+actor Person
+participant View
+participant System
+participant Complaint
+
+note over Person, Complaint: Show complaint list
+Person->View: 1. click_manage_complaint
+activate Person
+activate View
+View->System: 1.1 request_manageable_complaint_list
+activate System
+System->Complaint: 1.2 select()
+activate Complaint
+System<--Complaint: 1.3 return()
+deactivate Complaint
+View<--System: 1.4 show_manageable_complaint_list
+deactivate System
+Person<--View: 1.5 show_manageable_complaint_list
+deactivate View
+deactivate Person
+
+// note over Person, Complaint: Show complaint detail & Return to complaint list
+alt Click detail
+Person->View: 2. click_complaint_detail
+activate Person
+activate View
+View->System: 2.1 request_complaint_detail
+activate System
+System->Complaint: 2.2 select()
+activate Complaint
+System<--Complaint: 2.3 return()
+deactivate Complaint
+View<--System: 2.4 show_complaint_detail
+deactivate System
+Person<--View: 2.5 show_complaint_detail
+Person->View: 2.6 click_return_to_complaint_list
+View->System: 2.7 request_complaint_list
+activate System
+System->Complaint: 2.8 select()
+activate Complaint
+System<--Complaint: 2.9 return()
+deactivate Complaint
+View<--System: 2.10 show_complaint_list
+deactivate System
+Person<--View: 2.11 show_complaint_list
+deactivate View
+deactivate Person
+
+
+else Click add
+// note over Person, Complaint: Show add complaint form
+Person->View: 3. click_add_complaint
+activate Person
+activate View
+View->System: 3.1 request_add_complaint_form
+activate System
+View<--System: 3.4 show_add_complaint_form
+deactivate System
+Person<--View: 3.5 show_add_complaint_form
+//deactivate View
+// deactivate Person
+
+// note over Person, Complaint: Add (submit) complaint OR Cancel
+alt Add data & Click submit
+Person->View: 4. add_complaint_data
+// activate Person
+// activate View
+Person->View: 4.1 click_submit_complaint_data
+View->System: 4.2 submit_complaint_data
+activate System
+System->System: 4.3 check_submit_complaint_data
+alt Valid complaint data
+System->Complaint: 4.3.1 insert()
+activate Complaint
+System<--Complaint: 4.3.2 return()
+deactivate Complaint
+View<--System: 4.3.3 show_manageable_complaint_list
+Person<--View: 4.3.4 show_manageable_complaint_list
+else Invalid complaint data
+View<--System: 4.3.5 show_submit_error
+deactivate System
+Person<--View: 4.3.6 show_submit_error
+// deactivate View
+// deactivate Person
+end
+else Click cancel
+Person->View: 5. click_cancel
+View->System: 5.1 request_manageable_complaint_list
+activate System
+System->Complaint: 5.2 select()
+activate Complaint
+System<--Complaint: 5.3 return()
+deactivate Complaint
+View<--System: 5.4 show_manageable_complaint_list
+deactivate System
+Person<--View: 5.5 show_manageable_complaint_list
+deactivate View
+deactivate Person
+end
+
+
+else Click delete
+Person->View: 6. click_delete
+activate Person
+activate View
+View->System: 6.1 request_complaint_delete
+activate System
+System->Complaint: 6.2 delete()
+activate Complaint
+System<--Complaint: 6.3 return()
+deactivate Complaint
+View<--System: 6.4 show_manageable_complaint_list
+deactivate System
+Person<--View: 6.5 show_manageable_complaint_list
+deactivate View
+deactivate Person
+
+
+else Click edit
+
+
+end
+
