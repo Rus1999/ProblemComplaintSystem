@@ -1053,11 +1053,11 @@
 												"$ref": "AAAAAAGDnBdBHIbCsuY="
 											},
 											"font": "Arial;13;1",
-											"left": 536,
+											"left": 539.5,
 											"top": 715.5,
-											"width": 157,
+											"width": 174,
 											"height": 13,
-											"text": "UC06 เพิ่มข้อมูลผู้ดูแลระบบ"
+											"text": "UC06 จัดการข้อมูลผู้ดูแลระบบ"
 										},
 										{
 											"_type": "LabelView",
@@ -1088,9 +1088,9 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 531,
+									"left": 534.5,
 									"top": 708.5,
-									"width": 168,
+									"width": 185,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGDnBdBHIbDVPQ="
@@ -1190,7 +1190,7 @@
 							"containerChangeable": true,
 							"left": 496,
 							"top": 704,
-							"width": 237,
+							"width": 261,
 							"height": 35,
 							"nameCompartment": {
 								"$ref": "AAAAAAGDnBdBHIbCsuY="
@@ -4394,7 +4394,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 788,
+									"left": 792,
 									"top": 677,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4415,7 +4415,7 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 792,
+									"left": 797,
 									"top": 691,
 									"height": 13,
 									"alpha": 1.5707963267948966,
@@ -4436,7 +4436,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 779,
+									"left": 783,
 									"top": 648,
 									"height": 13,
 									"alpha": -1.5707963267948966,
@@ -4458,7 +4458,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 874,
-									"top": 650,
+									"top": 651,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -4520,7 +4520,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 702,
+									"left": 711,
 									"top": 703,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -4540,7 +4540,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 708,
+									"left": 717,
 									"top": 715,
 									"height": 13,
 									"alpha": -0.7853981633974483,
@@ -4560,7 +4560,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 690,
+									"left": 698,
 									"top": 678,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -4610,7 +4610,7 @@
 								"$ref": "AAAAAAGDnBw0LYfGMC8="
 							},
 							"lineStyle": 1,
-							"points": "895:635;673:703",
+							"points": "895:635;682:703",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGDnB4Xa7BI7/Q="
@@ -5804,7 +5804,7 @@
 					"_parent": {
 						"$ref": "AAAAAAGDnBTQCoXM4dc="
 					},
-					"name": "UC06 เพิ่มข้อมูลผู้ดูแลระบบ"
+					"name": "UC06 จัดการข้อมูลผู้ดูแลระบบ"
 				},
 				{
 					"_type": "UMLUseCase",
