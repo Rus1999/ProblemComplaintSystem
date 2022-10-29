@@ -27,8 +27,6 @@
     {
         $status="admin";
     }
-
-
 ?>
 
 <table>

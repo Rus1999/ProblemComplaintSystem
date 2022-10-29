@@ -19,11 +19,11 @@ create table if not exists Problem (
     Problem_date date not null,
     Problem_time time not null,
     Problem_title varchar(100) not null,
-    Problem_detail text(200) not null,
+    Problem_detail text(1000) not null,
     Problem_picture varchar(100),
-    Member_ID int(10) not null,
-    Employee_ID int(10) not null,
-    Admin_ID int(10) not null,
-    operational_ID int(10),
+    Member_ID int(10) null,
+    Employee_ID int(10) null,
+    Admin_ID int(10) null,
+    operational_ID int(10) null comment: 'link between problem and operational',
     Problem_status int(1) not null comment '1: complaint, 2: operational'
 );

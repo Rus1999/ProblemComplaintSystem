@@ -114,7 +114,7 @@
                 <input type="submit" value="Save">
             </td>
             <td>
-            <input type="button" value="back" onclick="history.back()">
+                <input type="button" value="back" onclick="history.back()">
             </td>
         </tr>
         <tr>

@@ -13,7 +13,13 @@
     }
 ?>
 
+
 <table align="center" style="padding: 7%;">
+    <tr>
+        <td>
+            <h3>Login</h3>
+        </td>
+    </tr>
     <form action="./r_login_pro.php" method="post" >
         <tr>
             <td>
