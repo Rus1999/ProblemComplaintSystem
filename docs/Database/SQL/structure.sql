@@ -11,6 +11,7 @@ create table if not exists Person (
     Person_username varchar(50) not null,
     Person_password varchar(50) not null,
     Person_status int(1) not null comment '1: member, 2: employee, 3: admin'
+    Person_rights boolean not null comment '1: usable, 2: unusable'
 );
 
 create table if not exists Problem (
