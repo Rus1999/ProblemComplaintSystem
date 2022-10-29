@@ -31,7 +31,7 @@
                             echo "
                             <ul>
                                 <li><a href=\"./r_info_show.php\">Personal Information</a></li>
-                                <li><a href=\"./r_manage_complaint.php\">Manage Complaint</a></li>
+                                <li><a href=\"./r_manage_complaint_show.php\">Manage Complaint</a></li>
                             </ul>
                             <hr>
                             <ul>    
@@ -44,8 +44,8 @@
                             echo "
                             <ul>
                                 <li><a href=\"./r_info_show.php\">Personal Information</a></li>
-                                <li><a href=\"./r_manage_complaint.php\">Manage Complaint</a></li>
-                                <li><a href=\"./r_manage_operational.php\">Manage Operational</a></li>
+                                <li><a href=\"./r_manage_complaint_show.php\">Manage Complaint</a></li>
+                                <li><a href=\"./r_manage_operational_show.php\">Manage Operational</a></li>
                             </ul>
                             <hr>
                             <ul>    
@@ -58,10 +58,10 @@
                             echo "
                             <ul>
                                 <li><a href=\"./r_info_show.php\">Personal Information</a></li>
-                                <li><a href=\"./r_manage_complaint.php\">Manage Complaint</a></li>
-                                <li><a href=\"./r_manage_operational.php\">Manage Operational</a></li>
-                                <li><a href=\"./r_manage_admin.php\">Manage Admin</a></li>
-                                <li><a href=\"./r_manage_user.php\">Manage user</a></li>
+                                <li><a href=\"./r_manage_complaint_show.php\">Manage Complaint</a></li>
+                                <li><a href=\"./r_manage_operational_show.php\">Manage Operational</a></li>
+                                <li><a href=\"./r_manage_admin_show.php\">Manage Admin</a></li>
+                                <li><a href=\"./r_manage_user_rights_show.php\">Manage User Rights</a></li>
                             </ul>
                             <hr>
                             <ul>    
@@ -82,4 +82,4 @@
                 ?>
             </td>
             <!-- content -->
-            <td valign="top" bgcolor="#EED5C2">
+            <td valign="top" bgcolor="#EED5C2" class="table-content">

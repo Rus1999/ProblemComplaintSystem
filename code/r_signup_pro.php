@@ -9,9 +9,10 @@
     $Person_username = $_POST['Person_username'];
     $Person_password = $_POST['Person_password'];
     $Person_status = $_POST['Person_status'];
+    $Person_rights = 1;
 
     $sql = "insert into person values($Person_ID, '$Person_fname', '$Person_lname', 
-    '$Person_phonenumber', '$Person_email', '$Person_username', '$Person_password', $Person_status);";
+    '$Person_phonenumber', '$Person_email', '$Person_username', '$Person_password', $Person_status, $Person_rights);";
     $conn->query($sql);
     
     $conn->close();
