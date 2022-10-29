@@ -9,9 +9,10 @@
     $Person_username = $_POST['Person_username'];
     $Person_password = $_POST['Person_password'];
     $Person_status = $_POST['Person_status'];
+    $Person_rights = 1;
     
     $sql = "update Person set Person_fname='$Person_fname', Person_lname='$Person_lname', Person_phonenumber='$Person_phonenumber',
-    Person_email='$Person_email', Person_username='$Person_username', Person_password='$Person_password', Person_status=$Person_status 
+    Person_email='$Person_email', Person_username='$Person_username', Person_password='$Person_password', Person_status=$Person_status, Person_rights=$Person_rights 
     where Person_ID=$Person_ID;";
     
     $conn->query($sql);

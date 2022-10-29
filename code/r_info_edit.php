@@ -26,7 +26,7 @@
 
 ?>
 
-<table class="table-content">
+<table>
     <form action="./r_info_edit_pro.php" method="post">
         <tr>
             <td>

@@ -31,7 +31,7 @@
 
 ?>
 
-<table class="table-content">
+<table>
     <tr>
         <td>
             <a href="./r_info_edit.php">Edit</a>
