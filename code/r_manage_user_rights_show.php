@@ -1,0 +1,76 @@
+<?php
+    include("./t_connect.php");
+    include("./t_headmenu.php");
+
+    $sql = "select * from Person where Person_status != 3 ;";
+    $result = $conn->query($sql);
+?>
+
+<h3>Manage User</h3>
+<table border="1">
+    <tr>
+        <td>Person_ID</td>
+        <td>first name</td>
+        <td>last name</td>
+        <td>phonenumber</td>
+        <td>email</td>
+        <td>status</td>
+        <td>Person_rights</td>
+        <td>Mange Person's rights</td>
+    </tr>
+    <?php
+        while($row = $result->fetch_assoc())
+        {
+            $Person_ID = $row['Person_ID'];
+            $Person_fname = $row['Person_fname'];
+            $Person_lname = $row['Person_lname'];
+            $Person_phonenumber = $row['Person_phonenumber'];
+            $Person_email = $row['Person_email'];
+            $Person_status = $row['Person_status'];
+            $Person_username = $row['Person_username'];
+            $Person_rights = $row['Person_rights'];
+
+            if ($Person_status==1)
+            {
+                $status = "member";
+            }
+            else if ($Person_status==2)
+            { 
+                $status = "employee";
+            }
+            else
+            {
+                $status = "";
+            }
+
+            if ($Person_rights==1)
+            {
+                $rights = "usable";
+            }
+            else if($Person_rights==0)
+            {
+                $rights = "locked";
+            }
+
+            echo 
+            "
+                <tr>
+                    <td align=\"center\">$Person_ID</td>
+                    <td>$Person_fname</td>
+                    <td>$Person_lname</td>
+                    <td>$Person_phonenumber</td>
+                    <td>$Person_email</td>
+                    <td align=\"center\">$status</td>
+                    <td align=\"center\">$rights</td>
+                    <td align=\"center\"><a href=\"./r_manage_user_rights_edit.php?Person_ID=$Person_ID\">manage</a></td>
+                </tr>
+            ";
+        }
+    ?>
+</table>
+
+
+<?php
+    $conn->close();
+    include("./t_foot.php");
+?>
