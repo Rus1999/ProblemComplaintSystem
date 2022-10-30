@@ -97,7 +97,7 @@
                         Create date:
                     </td>
                     <td>
-                        echo $Operational_date
+                        $Operational_date
                     </td>
                 </tr>
                 <tr>

@@ -16,7 +16,7 @@
         </tr>
         <tr>
             <!-- menu -->
-            <td valign="top" width="17%" height="420px" bgcolor="#5F7367">
+            <td valign="top" width="17%" height="777px" bgcolor="#5F7367">
                 <h4 style="padding: 10px 0px 0px 10px;">Menu:</h4>
                 <?php
                     // status: 1:member, 2:employee, 3:admin
@@ -82,4 +82,4 @@
                 ?>
             </td>
             <!-- content -->
-            <td valign="top" height="420px" bgcolor="#EED5C2" class="table-content">
+            <td valign="top" height="777px" bgcolor="#EED5C2" class="table-content">

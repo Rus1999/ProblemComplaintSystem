@@ -8,12 +8,6 @@
     <form action="./r_manage_complaint_add_pro.php" method="post" enctype="multipart/form-data">
         <tr>
             <td>
-                <input type="date" name="Complaint_date" value="<?php echo date("Y-m-d"); ?>">
-                <input type="time" name="Complaint_time" value="<?php echo date("H:i:s"); ?>">
-            </td>
-        </tr>
-        <tr>
-            <td>
                 <input type="text" name="Complaint_title" placeholder="complaint's title">
             </td>
         </tr>
@@ -25,11 +19,7 @@
         <tr>
             <td>
                 <label for="image">Image</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="file" name="Complaint_picture" id="image">
+                <input type="file" name="Complaint_picture">
             </td>
         </tr>
         <tr>

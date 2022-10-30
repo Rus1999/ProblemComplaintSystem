@@ -11,25 +11,32 @@
     $Operational_ID = "null";
     $Problem_status = 1;
 
-    // file
-    $Complaint_picture_name = $_FILES['Complaint_picture']['name'];
-    $Complaint_picture_type = $_FILES['Complaint_picture']['type'];
-    $Complaint_picture_size = $_FILES['Complaint_picture']['size'];
-    $Complaint_picture_name_temp = $_FILES['Complaint_picture']['tmp_name'];
-    $Complaint_picture_error = $_FILES['Complaint_picture']['error'];
+    if ($_FILES['Complaint_picture']['size']==0)
+    {
+        $uploadfile_path = null;
+    }
+    else
+    {
+        // file
+        $Complaint_picture_name = $_FILES['Complaint_picture']['name'];
+        $Complaint_picture_type = $_FILES['Complaint_picture']['type'];
+        $Complaint_picture_size = $_FILES['Complaint_picture']['size'];
+        $Complaint_picture_name_temp = $_FILES['Complaint_picture']['tmp_name'];
+        $Complaint_picture_error = $_FILES['Complaint_picture']['error'];
 
-    // echo "
-    //     $Complaint_picture_name <br>
-    //     $Complaint_picture_type <br>
-    //     $Complaint_picture_size <br>
-    //     $Complaint_picture_name_temp <br>
-    //     $Complaint_picture_error <br>
-    // ";
+        // echo "
+        //     $Complaint_picture_name <br>
+        //     $Complaint_picture_type <br>
+        //     $Complaint_picture_size <br>
+        //     $Complaint_picture_name_temp <br>
+        //     $Complaint_picture_error <br>
+        // ";
 
-    // move file
-    $uploaddir = 'complaintPic/';
-    $uploadfile_path = $uploaddir . basename($Complaint_picture_name);
-    move_uploaded_file($Complaint_picture_name_temp, $uploadfile_path);
+        // move file
+        $uploaddir = 'complaintPic/';
+        $uploadfile_path = $uploaddir . basename($Complaint_picture_name);
+        move_uploaded_file($Complaint_picture_name_temp, $uploadfile_path);
+    }
 
     if ($_SESSION['status']==1)
     {

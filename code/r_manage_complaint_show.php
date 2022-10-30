@@ -2,7 +2,15 @@
     include("./t_connect.php");
     include("./t_headmenu.php");
 
-    $sql = "select * from Problem ;";
+    if ($_SESSION['status']==1)
+    {
+        $sql = "select * from Problem where Problem_status=1 and Create_Person_ID=".$_SESSION['id'].";";
+    }
+    else
+    {
+        $sql = "select * from Problem where Problem_status=1;";
+    }
+    
     $result = $conn->query($sql);
 ?>
 
