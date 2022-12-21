@@ -1,14 +1,33 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Dec 21, 2022 at 07:30 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+--
+-- Database: `problemcomplaintsystem`
+--
 CREATE DATABASE IF NOT EXISTS `problemcomplaintsystem` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE `problemcomplaintsystem`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `person`
+--
 
 CREATE TABLE `person` (
   `Person_ID` int(10) NOT NULL,
@@ -22,6 +41,10 @@ CREATE TABLE `person` (
   `Person_rights` tinyint(1) DEFAULT NULL COMMENT '1: usable, 2: un usable'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `person`
+--
+
 INSERT INTO `person` (`Person_ID`, `Person_fname`, `Person_lname`, `Person_phonenumber`, `Person_email`, `Person_username`, `Person_password`, `Person_status`, `Person_rights`) VALUES
 (11, 'Punyarit', 'Klaphachon', '0610867479', 'punyarit07@gmail.com', 'rus', 'rus', 3, 1),
 (12, 'Albus', 'Dumbledore', 'phoenix', 'albus@hogwards.com', 'albus', 'albus', 2, 1),
@@ -29,6 +52,12 @@ INSERT INTO `person` (`Person_ID`, `Person_fname`, `Person_lname`, `Person_phone
 (14, 'aaa', 'aaa', 'aaa', 'a@a.c', 'aaa', 'aaa', 1, 1),
 (15, 'sur', 'sur', 'sur', 's@u.r', 'sur', 'sur', 3, 1),
 (18, 'usa', 'ysa', 'uysa', 'usa@s.s', 'usa', 'usa', 3, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `problem`
+--
 
 CREATE TABLE `problem` (
   `Problem_ID` int(10) NOT NULL,
@@ -43,6 +72,10 @@ CREATE TABLE `problem` (
   `Operational_ID` int(10) DEFAULT NULL COMMENT 'link between problem and operational',
   `Problem_status` int(1) NOT NULL COMMENT '1: complaint, 2: operational'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `problem`
+--
 
 INSERT INTO `problem` (`Problem_ID`, `Problem_date`, `Problem_time`, `Problem_title`, `Problem_detail`, `Problem_picture`, `Create_Person_ID`, `Employee_ID`, `Admin_ID`, `Operational_ID`, `Problem_status`) VALUES
 (29, '2022-10-30', '14:33:38', 'ไฟไม่ติด', 'ไฟไม่ติด', 'complaintPic/20221030_142230.jpg', 11, NULL, 11, 33, 1),
@@ -61,17 +94,35 @@ INSERT INTO `problem` (`Problem_ID`, `Problem_date`, `Problem_time`, `Problem_ti
 (43, '2022-10-31', '10:51:13', 'พังประตูเข้าไป', 'พังประตูเข้าไป', '', 12, NULL, NULL, NULL, 2),
 (44, '2022-10-31', '11:00:21', 'No operational', 'No operational', '', 11, NULL, NULL, NULL, 1);
 
+--
+-- Indexes for dumped tables
+--
 
+--
+-- Indexes for table `person`
+--
 ALTER TABLE `person`
   ADD PRIMARY KEY (`Person_ID`);
 
+--
+-- Indexes for table `problem`
+--
 ALTER TABLE `problem`
   ADD PRIMARY KEY (`Problem_ID`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `person`
+--
 ALTER TABLE `person`
   MODIFY `Person_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
+--
+-- AUTO_INCREMENT for table `problem`
+--
 ALTER TABLE `problem`
   MODIFY `Problem_ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 COMMIT;

@@ -32,6 +32,7 @@
             $Complaint_date = $row['Problem_date'];
             $Complaint_time = $row['Problem_time'];
             $Complaint_title = $row['Problem_title'];
+            $Operational_ID = $row['Operational_ID'];
 
             echo "
                 <tr>
@@ -41,12 +42,26 @@
                     <td>$Complaint_title</td>
                     <td><a href=\"./r_manage_complaint_detail.php?Complaint_ID=$Complaint_ID\">detail</a></td>
                     <td>
-                        <a href=\"./r_manage_complaint_edit.php?Complaint_ID=$Complaint_ID\">edit</a>
-                        |
-                        <a href=\"./r_manage_complaint_delete.php?Complaint_ID=$Complaint_ID\">delete</a>
+                ";
+            
+            if ($Operational_ID==null)
+            {
+                echo "
+                    <a href=\"./r_manage_complaint_edit.php?Complaint_ID=$Complaint_ID\">edit</a>
+                    |
+                    <a href=\"./r_manage_complaint_delete.php?Complaint_ID=$Complaint_ID\">delete</a>
                     </td>
                 </tr>
-            ";
+                ";
+            }
+            else
+            {
+                echo "
+                    </td>
+                </tr>
+                ";
+            }
+
         }
     ?>
 </table>
