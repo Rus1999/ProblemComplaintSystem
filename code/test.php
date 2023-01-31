@@ -59,3 +59,30 @@ if($result){
 //<button class="btnOk">ตกลง</button>
 ?>
 <?php include("./Footer.php");?>  
+
+
+<?php
+    if ($_SESSION['lang'] == "en")
+    {
+?>
+
+<?php
+    }
+    else if ($_SESSION['lang'] == "th")
+    {
+?>
+
+<?php
+    }
+?>
+
+
+
+if ($_SESSION['lang'] == "en")
+{
+
+}
+else if ($_SESSION['lang'] == "th")
+{
+    
+}

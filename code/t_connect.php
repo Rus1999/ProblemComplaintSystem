@@ -1,5 +1,6 @@
 <?php
     session_start();
+    
     // initialize connection
     $conn = new mysqli("localhost", "root", "", "problemcomplaintsystem");
     if($conn->connect_error)

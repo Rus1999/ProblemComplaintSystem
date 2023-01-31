@@ -14,57 +14,122 @@
     $result = $conn->query($sql);
 ?>
 
-<h3>Manage Complaint</h3>
-<a href="./r_manage_complaint_add.php">Add Complaint</a>
-<table border="1">
-    <tr>
-        <td>Complaint_ID</td>
-        <td>date</td>
-        <td>time</td>
-        <td>title</td>
-        <td>detail</td>
-        <td>manage</td>
-    </tr>
-    <?php
-        while ($row=$result->fetch_assoc())
-        {
-            $Complaint_ID = $row['Problem_ID'];
-            $Complaint_date = $row['Problem_date'];
-            $Complaint_time = $row['Problem_time'];
-            $Complaint_title = $row['Problem_title'];
-            $Operational_ID = $row['Operational_ID'];
-
-            echo "
-                <tr>
-                    <td>$Complaint_ID</td>
-                    <td>$Complaint_date</td>
-                    <td>$Complaint_time</td>
-                    <td>$Complaint_title</td>
-                    <td><a href=\"./r_manage_complaint_detail.php?Complaint_ID=$Complaint_ID\">detail</a></td>
-                    <td>
-                ";
-            
-            if ($Operational_ID==null)
+<?php
+    if ($_SESSION['lang'] == "en")
+    {
+?>
+    <h3>Manage Complaint</h3>
+    <a href="./r_manage_complaint_add.php">Add Complaint</a>
+    <table border="1">
+        <tr>
+            <td>Complaint_ID</td>
+            <td>date</td>
+            <td>time</td>
+            <td>title</td>
+            <td>detail</td>
+            <td>manage</td>
+        </tr>
+        <?php
+            while ($row=$result->fetch_assoc())
             {
-                echo "
-                    <a href=\"./r_manage_complaint_edit.php?Complaint_ID=$Complaint_ID\">edit</a>
-                    |
-                    <a href=\"./r_manage_complaint_delete.php?Complaint_ID=$Complaint_ID\">delete</a>
-                    </td>
-                </tr>
-                ";
-            }
-            else
-            {
-                echo "
-                    </td>
-                </tr>
-                ";
-            }
+                $Complaint_ID = $row['Problem_ID'];
+                $Complaint_date = $row['Problem_date'];
+                $Complaint_time = $row['Problem_time'];
+                $Complaint_title = $row['Problem_title'];
+                $Operational_ID = $row['Operational_ID'];
 
-        }
-    ?>
-</table>
+                echo "
+                    <tr>
+                        <td>$Complaint_ID</td>
+                        <td>$Complaint_date</td>
+                        <td>$Complaint_time</td>
+                        <td>$Complaint_title</td>
+                        <td><a href=\"./r_manage_complaint_detail.php?Complaint_ID=$Complaint_ID\">detail</a></td>
+                        <td>
+                    ";
+                
+                if ($Operational_ID==null)
+                {
+                    echo "
+                        <a href=\"./r_manage_complaint_edit.php?Complaint_ID=$Complaint_ID\">edit</a>
+                        |
+                        <a href=\"./r_manage_complaint_delete.php?Complaint_ID=$Complaint_ID\">delete</a>
+                        </td>
+                    </tr>
+                    ";
+                }
+                else
+                {
+                    echo "
+                        </td>
+                    </tr>
+                    ";
+                }
+
+            }
+        ?>
+    </table>
+<?php
+    }
+    else if ($_SESSION['lang'] == "th")
+    {
+?>
+    <h3>จัดการคำร้องเรียน</h3>
+    <a href="./r_manage_complaint_add.php">เพิ่มคำร้อง</a>
+    <table border="1">
+        <tr>
+            <td>รหัสคำร้อง</td>
+            <td>วันที่</td>
+            <td>เวลา</td>
+            <td>หัวข้อ</td>
+            <td>รายละเอียด</td>
+            <td>จัดการ</td>
+        </tr>
+        <?php
+            while ($row=$result->fetch_assoc())
+            {
+                $Complaint_ID = $row['Problem_ID'];
+                $Complaint_date = $row['Problem_date'];
+                $Complaint_time = $row['Problem_time'];
+                $Complaint_title = $row['Problem_title'];
+                $Operational_ID = $row['Operational_ID'];
+
+                echo "
+                    <tr>
+                        <td>$Complaint_ID</td>
+                        <td>$Complaint_date</td>
+                        <td>$Complaint_time</td>
+                        <td>$Complaint_title</td>
+                        <td><a href=\"./r_manage_complaint_detail.php?Complaint_ID=$Complaint_ID\">รายละเอียด</a></td>
+                        <td>
+                    ";
+                
+                if ($Operational_ID==null)
+                {
+                    echo "
+                        <a href=\"./r_manage_complaint_edit.php?Complaint_ID=$Complaint_ID\">แก้ไข</a>
+                        |
+                        <a href=\"./r_manage_complaint_delete.php?Complaint_ID=$Complaint_ID\">ลบ</a>
+                        </td>
+                    </tr>
+                    ";
+                }
+                else
+                {
+                    echo "
+                        </td>
+                    </tr>
+                    ";
+                }
+
+            }
+        ?>
+    </table>
+<?php
+    }
+?>
+
+
 
 <?php
     $conn->close();

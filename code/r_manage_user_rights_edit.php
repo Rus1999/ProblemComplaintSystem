@@ -43,87 +43,184 @@
     }
 ?>
 
-<table>
-    <tr>
-        <td>
-            ID: 
-        </td>
-        <td>
-            <?php echo $Person_ID; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            First name: 
-        </td>
-        <td>
-            <?php echo $Person_fname; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Last name:
-        </td>
-        <td>
-            <?php echo $Person_lname; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Phone number: 
-        </td>
-        <td>
-            <?php echo $Person_phonenumber; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Email: 
-        </td>
-        <td>
-            <?php echo $Person_email; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Username: 
-        </td>
-        <td>
-            <?php echo $Person_username; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Status: 
-        </td>
-        <td>
-            <?php echo $status; ?>
-        </td>
-    </tr>
-    <form action="./r_manage_user_rights_edit_pro.php" method="post">
+
+<?php
+    if ($_SESSION['lang'] == "en")
+    {
+?>
+    <table>
         <tr>
             <td>
-                <input type="radio" name="Person_rights" value="1" <?php echo $rights1; ?>>Usable account
+                ID: 
             </td>
             <td>
-                <input type="radio" name="Person_rights" value="0" <?php echo $rights2; ?>>Locked account
+                <?php echo $Person_ID; ?>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="submit" value="Save">
+                First name: 
             </td>
             <td>
-                <input type="button" value="back" onclick="history.back()">
+                <?php echo $Person_fname; ?>
             </td>
         </tr>
         <tr>
             <td>
-                <input type="hidden" name="Person_ID" value=<?php echo $Person_ID; ?>>
+                Last name:
+            </td>
+            <td>
+                <?php echo $Person_lname; ?>
             </td>
         </tr>
-    </form>
-</table>
+        <tr>
+            <td>
+                Phone number: 
+            </td>
+            <td>
+                <?php echo $Person_phonenumber; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email: 
+            </td>
+            <td>
+                <?php echo $Person_email; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Username: 
+            </td>
+            <td>
+                <?php echo $Person_username; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status: 
+            </td>
+            <td>
+                <?php echo $status; ?>
+            </td>
+        </tr>
+        <form action="./r_manage_user_rights_edit_pro.php" method="post">
+            <tr>
+                <td>
+                    <input type="radio" name="Person_rights" value="1" <?php echo $rights1; ?>>Usable account
+                </td>
+                <td>
+                    <input type="radio" name="Person_rights" value="0" <?php echo $rights2; ?>>Locked account
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Save">
+                </td>
+                <td>
+                    <input type="button" value="back" onclick="history.back()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="Person_ID" value=<?php echo $Person_ID; ?>>
+                </td>
+            </tr>
+        </form>
+    </table>
+<?php
+    }
+    else if ($_SESSION['lang'] == "th")
+    {
+?>
+    <table>
+        <tr>
+            <td>
+                รหัส: 
+            </td>
+            <td>
+                <?php echo $Person_ID; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ชื่อจริง: 
+            </td>
+            <td>
+                <?php echo $Person_fname; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                นามสกุล:
+            </td>
+            <td>
+                <?php echo $Person_lname; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                เบอร์โทรศัพท์: 
+            </td>
+            <td>
+                <?php echo $Person_phonenumber; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                อีเมล์: 
+            </td>
+            <td>
+                <?php echo $Person_email; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                ชื่อจริง: 
+            </td>
+            <td>
+                <?php echo $Person_username; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                สถานะ: 
+            </td>
+            <td>
+                <?php echo $status; ?>
+            </td>
+        </tr>
+        <form action="./r_manage_user_rights_edit_pro.php" method="post">
+            <tr>
+                <td>
+                    <input type="radio" name="Person_rights" value="1" <?php echo $rights1; ?>>สามารถใช้งานได้
+                </td>
+                <td>
+                    <input type="radio" name="Person_rights" value="0" <?php echo $rights2; ?>>ระงับบัญชี
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="บันทึก">
+                </td>
+                <td>
+                    <input type="button" value="กลับ" onclick="history.back()">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="hidden" name="Person_ID" value=<?php echo $Person_ID; ?>>
+                </td>
+            </tr>
+        </form>
+    </table>
+<?php
+    }
+?>
+
+
+
 
 
 

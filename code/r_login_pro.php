@@ -28,16 +28,41 @@
         } // password incorrect
         else if ($loginPassword!=$Person_password)
         {
-            echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=passwordIncorrect\">";
+            if ($_SESSION['lang'] == "en")
+            {
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=passwordIncorrect\">";
+            }
+                else if ($_SESSION['lang'] == "th")
+            {
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=รหัสผ่านไม่ถูกต้อง\">";
+            }
+            
         }// unusable account
         else if ($Person_rights==0)
         {
-            echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=accountIsLock\">";
+            if ($_SESSION['lang'] == "en")
+            {
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=accountIsLock\">";
+            }
+                else if ($_SESSION['lang'] == "th")
+            {
+                echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=บัญชีผู้ใช้งานถูกระงับ\">";
+            }
+            
         }
 
     } // user not found
     else
     {
-        echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=userNotFound\">";
+        if ($_SESSION['lang'] == "en")
+        {
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=userNotFound\">";
+        }
+            else if ($_SESSION['lang'] == "th")
+        {
+            echo "<meta http-equiv=\"refresh\" content=\"0; url=./r_login.php?error=ไม่พบชื่อผู้ใช้งาน\">";
+        }
+        
+
     }
 ?>

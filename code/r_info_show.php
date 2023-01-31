@@ -29,77 +29,161 @@
     }
 ?>
 
-<table>
-    <tr>
-        <td>
-            <a href="./r_info_edit.php">Edit</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            ID: 
-        </td>
-        <td>
-            <?php echo $Person_ID; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            First name: 
-        </td>
-        <td>
-            <?php echo $Person_fname; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Last name:
-        </td>
-        <td>
-            <?php echo $Person_lname; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Phone number: 
-        </td>
-        <td>
-            <?php echo $Person_phonenumber; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Email: 
-        </td>
-        <td>
-            <?php echo $Person_email; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Username: 
-        </td>
-        <td>
-            <?php echo $Person_username; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Password: 
-        </td>
-        <td>
-            <?php echo $Person_password; ?>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Status: 
-        </td>
-        <td>
-            <?php echo $status; ?>
-        </td>
-    </tr>
-</table>
+<?php
+        if ($_SESSION['lang'] == "en")
+            {
+        ?>
+            <table>
+                <tr>
+                    <td>
+                        <a href="./r_info_edit.php">Edit</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ID: 
+                    </td>
+                    <td>
+                        <?php echo $Person_ID; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        First name: 
+                    </td>
+                    <td>
+                        <?php echo $Person_fname; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Last name:
+                    </td>
+                    <td>
+                        <?php echo $Person_lname; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone number: 
+                    </td>
+                    <td>
+                        <?php echo $Person_phonenumber; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email: 
+                    </td>
+                    <td>
+                        <?php echo $Person_email; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Username: 
+                    </td>
+                    <td>
+                        <?php echo $Person_username; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password: 
+                    </td>
+                    <td>
+                        <?php echo $Person_password; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Status: 
+                    </td>
+                    <td>
+                        <?php echo $status; ?>
+                    </td>
+                </tr>
+            </table>
+        <?php
+            }
+            else if ($_SESSION['lang'] == "th")
+            {
+        ?>
+            <table>
+                <tr>
+                    <td>
+                        <a href="./r_info_edit.php">แก้ไข</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ไอดี: 
+                    </td>
+                    <td>
+                        <?php echo $Person_ID; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ชื่อจริง: 
+                    </td>
+                    <td>
+                        <?php echo $Person_fname; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        นามสกุล:
+                    </td>
+                    <td>
+                        <?php echo $Person_lname; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        เบอร์โทรศัพท์: 
+                    </td>
+                    <td>
+                        <?php echo $Person_phonenumber; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        อีเมล์: 
+                    </td>
+                    <td>
+                        <?php echo $Person_email; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ชื่อผู้ใช้งาน: 
+                    </td>
+                    <td>
+                        <?php echo $Person_username; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        รหัสผ่าน: 
+                    </td>
+                    <td>
+                        <?php echo $Person_password; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        สถานะ: 
+                    </td>
+                    <td>
+                        <?php echo $status; ?>
+                    </td>
+                </tr>
+            </table>
+        <?php
+            }
+        ?>
+
 
 
 <?php
